@@ -12,12 +12,20 @@ namespace RecipeChooser
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
-            
+            Button mainButton = FindViewById<Button>(Resource.Id.mainBtn);
+
+            //FindViewById<Button>(Resource.Id.mainBtn).Click += (o, e) =>
+            //{
+
+            //};
+
+            mainButton.Click += delegate {
+                SetContentView(Resource.Layout.randomizedRecipe);
+            };
         }
-        private void testomdetfungerarmedgithub()
-        { }
+       
     }
 }
 
