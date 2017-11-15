@@ -27,28 +27,40 @@ namespace RecipeChooser
                 SetContentView(Resource.Layout.randomizedRecipe);
             
                 List<Recipes> recipeList = new List<Recipes>();
-                recipeList.Add(new Recipes { Name = "Lasagne", imagePath = "Chili_con_carne", webLink = "sven" });
-                recipeList.Add(new Recipes { Name = "Köttbullar och potatismos", imagePath = "lasagne", webLink = "tor" });
-                recipeList.Add(new Recipes { Name = "Pizza", imagePath = "Meatballs", webLink = "tor" });
-                recipeList.Add(new Recipes { Name = "Chili con carne", imagePath = "pizza", webLink = "tor" });
+                recipeList.Add(new Recipes { Name = "Lasagne", imagePath = "Lasagne", webLink = "sven" });
+                recipeList.Add(new Recipes { Name = "Köttbullar och potatismos", imagePath = "Meatballs", webLink = "tor" });
+                recipeList.Add(new Recipes { Name = "Pizza", imagePath = "pizza", webLink = "tor" });
+                recipeList.Add(new Recipes { Name = "Chili con carne", imagePath = "Chili_con_carne", webLink = "tor" });
                 recipeList.Add(new Recipes { Name = "Spaghetti med köttfärssås", imagePath = "spaghettibolognese", webLink = "tor" });
             
                
                 TextView recipeTitleName = FindViewById<TextView>(Resource.Id.recipeTitle);
 
-                //ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
+                ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
 
                 Random random = new Random();
                 int randomNumber = random.Next(0, 4);
 
 
-                string imageName = recipeList[randomNumber].imagePath;
-
-                //recipeTitleName.Text = recipeList[randomNumber].Name;
-                recipeTitleName.Text = recipeList[randomNumber].imagePath;
+                string imageName = recipeList[randomNumber].imagePath;              
+                //string imageString = "Resource.Drawable.imageName." + imageName;
+                recipeTitleName.Text = recipeList[randomNumber].Name;
+               
+                //recipeTitleName.Text = recipeList[randomNumber].imagePath;
 
                 //imageDialog.SetImageResource(Resource.Drawable.imageName);
+                //imageDialog.SetImageResource(imageString);
 
+                if (imageName == "Lasagne")
+                { imageDialog.SetImageResource(Resource.Drawable.Lasagne); }
+                else if(imageName == "Meatballs")
+                { imageDialog.SetImageResource(Resource.Drawable.Meatballs); }
+                else if (imageName == "pizza")
+                { imageDialog.SetImageResource(Resource.Drawable.pizza); }
+                else if (imageName == "Chili_con_carne")
+                { imageDialog.SetImageResource(Resource.Drawable.Chili_con_carne); }
+                else if (imageName == "spaghettibolognese")
+                { imageDialog.SetImageResource(Resource.Drawable.spaghettibolognese); }
             };
 
         }

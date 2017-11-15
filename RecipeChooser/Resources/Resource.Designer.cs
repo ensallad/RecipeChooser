@@ -51,7 +51,7 @@ namespace RecipeChooser
 			public const int Icon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int lasagne = 2130837506;
+			public const int Lasagne = 2130837506;
 			
 			// aapt resource value: 0x7f020003
 			public const int Meatballs = 2130837507;
@@ -74,6 +74,9 @@ namespace RecipeChooser
 		
 		public partial class Id
 		{
+			
+			// aapt resource value: 0x7f050003
+			public const int imageDisplay = 2131034115;
 			
 			// aapt resource value: 0x7f050001
 			public const int mainBtn = 2131034113;
