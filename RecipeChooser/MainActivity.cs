@@ -5,6 +5,7 @@ using System;
 using Android.Views;
 using System.Collections;
 using System.Collections.Generic;
+using Android.Content;
 
 namespace RecipeChooser
 {
@@ -81,7 +82,6 @@ namespace RecipeChooser
             recipeList.Add(new Recipes { Name = "Spaghetti med köttfärssås", imagePath = "spaghettibolognese", webLink = "https://www.koket.se/mitt-kok/jennie-wallden/klassisk-kottfarssas-med-spaghetti/" });
 
 
-
             TextView recipeTitleName = FindViewById<TextView>(Resource.Id.recipeTitle);
 
             ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
@@ -90,8 +90,6 @@ namespace RecipeChooser
             int randomNumber = random.Next(0, 4);
 
             recipeTitleName.Text = recipeList[randomNumber].Name;
-
-
 
             string imageName = recipeList[randomNumber].imagePath;
             if (imageName == "Lasagne")
@@ -105,11 +103,19 @@ namespace RecipeChooser
             else if (imageName == "spaghettibolognese")
             { imageDialog.SetImageResource(Resource.Drawable.spaghettibolognese); }
 
-
-
             Button newRecipeButton = FindViewById<Button>(Resource.Id.newRecipeBtn);
             newRecipeButton.Click += delegate
             { setNewLayout(); };
+
+            Button goToRecipeButton = FindViewById<Button>(Resource.Id.goToRecipeBtn);
+            string recipeUrl = recipeList[randomNumber].webLink;
+            goToRecipeButton.Click += delegate
+            {
+                var uri = Android.Net.Uri.Parse(recipeUrl);
+                var intent = new Intent(Intent.ActionView, uri);
+                StartActivity(intent);
+            };
+
         }
     }
     }

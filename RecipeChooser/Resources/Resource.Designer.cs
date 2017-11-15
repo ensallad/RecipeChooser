@@ -75,6 +75,9 @@ namespace RecipeChooser
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050005
+			public const int goToRecipeBtn = 2131034117;
+			
 			// aapt resource value: 0x7f050003
 			public const int imageDisplay = 2131034115;
 			
