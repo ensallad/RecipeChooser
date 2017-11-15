@@ -9,25 +9,28 @@
         android:text="Recipe Name!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recipeTitle" />
+        android:id="@+id/recipeTitle"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
     <ImageView
         android:id="@+id/imageDisplay"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="350dp"
         android:src="@drawable/Meatballs"
         android:layout_gravity="center"
-        android:minWidth="800px"
+        android:minWidth="750px"
         android:paddingBottom="10dp" />
     <Button
         android:text="Nytt recept"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:id="@+id/newRecipeBtn"
         android:backgroundTint="#ff9acd32" />
     <Button
         android:text="Gå till recept"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:id="@+id/goToRecipeBtn"
         android:backgroundTint="#ffff8c00" />
 </LinearLayout>
