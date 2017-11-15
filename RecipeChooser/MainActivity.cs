@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
+using Android.Views;
 
 namespace RecipeChooser
 {
@@ -16,16 +18,25 @@ namespace RecipeChooser
 
             Button mainButton = FindViewById<Button>(Resource.Id.mainBtn);
 
-            //FindViewById<Button>(Resource.Id.mainBtn).Click += (o, e) =>
-            //{
+            //TextView reciepeTextMain = FindViewById<TextView>(Resource.Id.textViewMain);
 
-            //};
-
-            mainButton.Click += delegate {
+            mainButton.Click += delegate
+            {
                 SetContentView(Resource.Layout.randomizedRecipe);
+
+                TextView textan;
+                textan = FindViewById<TextView>(Resource.Id.textViewNumber1);
+
+                Random random = new Random();
+                int randomNumber = random.Next(1, 20);
+
+                string randomNumberInString = randomNumber.ToString();
+                //reciepeText.Text = randomNumberInString;
+                textan.Text = randomNumberInString;
             };
+
         }
-       
+
     }
 }
 

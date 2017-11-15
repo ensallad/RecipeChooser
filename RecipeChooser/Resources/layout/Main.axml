@@ -5,12 +5,19 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMain"
+        android:layout_marginBottom="50dp" />
     <Button
         android:text="Randomize recipe"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/mainBtn"
-        android:layout_marginBottom="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#ff8b008b" />
 </LinearLayout>
