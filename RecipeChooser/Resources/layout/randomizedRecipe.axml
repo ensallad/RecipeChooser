@@ -19,7 +19,7 @@
         android:layout_height="350dp"
         android:src="@drawable/Meatballs"
         android:layout_gravity="center"
-        android:minWidth="750px"
+        android:minWidth="350dp"
         android:paddingBottom="10dp" />
     <Button
         android:text="Nytt recept"

@@ -12,13 +12,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewMain"
         android:layout_marginBottom="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:gravity="center" />
+    <ImageView
+        android:id="@+id/imageDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:src="@drawable/startbild"
+        android:layout_gravity="center"
+        android:minWidth="350dp"
+        android:layout_marginTop="-20dp" />
     <Button
         android:text="Slumpa recept"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:id="@+id/mainBtn"
-        android:layout_marginTop="200dp"
-        android:backgroundTint="#ff8b008b" />
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffe9967a" />
 </LinearLayout>

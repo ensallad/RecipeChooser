@@ -64,7 +64,7 @@ namespace RecipeChooser
             Random random = new Random();
             int randomNumber = random.Next(0, 19);
 
-            recipeTitleName.Text = recipeList[randomNumber].Name + " " + randomNumber;
+            recipeTitleName.Text = recipeList[randomNumber].Name;
 
             string imageName = recipeList[randomNumber].imagePath;
             if (imageName == "Lasagne")
@@ -75,8 +75,10 @@ namespace RecipeChooser
             { imageDialog.SetImageResource(Resource.Drawable.pizza); }
             else if (imageName == "Chili_con_carne")
             { imageDialog.SetImageResource(Resource.Drawable.Chili_con_carne); }
-            else if (imageName == "spaghettibolognese")
-            { imageDialog.SetImageResource(Resource.Drawable.spaghettibolognese); }
+            else if (imageName == "Carbonara")
+            { imageDialog.SetImageResource(Resource.Drawable.Carbonara); }
+            else if (imageName == "Chili_con_carne")
+            { imageDialog.SetImageResource(Resource.Drawable.Chili_con_carne); }
             else if (imageName == "Pannkaka")
             { imageDialog.SetImageResource(Resource.Drawable.Pannkaka); }
             else if (imageName == "Biffstroganoff")

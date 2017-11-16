@@ -126,17 +126,17 @@ namespace RecipeChooser
 			// aapt resource value: 0x7f050005
 			public const int goToRecipeBtn = 2131034117;
 			
-			// aapt resource value: 0x7f050003
-			public const int imageDisplay = 2131034115;
-			
 			// aapt resource value: 0x7f050001
-			public const int mainBtn = 2131034113;
+			public const int imageDisplay = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int mainBtn = 2131034114;
 			
 			// aapt resource value: 0x7f050004
 			public const int newRecipeBtn = 2131034116;
 			
-			// aapt resource value: 0x7f050002
-			public const int recipeTitle = 2131034114;
+			// aapt resource value: 0x7f050003
+			public const int recipeTitle = 2131034115;
 			
 			// aapt resource value: 0x7f050000
 			public const int textViewMain = 2131034112;
