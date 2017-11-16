@@ -24,13 +24,14 @@
     <Button
         android:text="Nytt recept"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:id="@+id/newRecipeBtn"
-        android:backgroundTint="#ff9acd32" />
+        android:backgroundTint="#ff9acd32"
+        android:layout_marginTop="-30dp" />
     <Button
         android:text="Gå till recept"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:id="@+id/goToRecipeBtn"
         android:backgroundTint="#ffff8c00" />
 </LinearLayout>
