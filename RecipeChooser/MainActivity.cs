@@ -12,6 +12,8 @@ namespace RecipeChooser
     [Activity(Label = "Receptväljaren", MainLauncher = true, Icon = "@drawable/startbild")]
     public class MainActivity : Activity
     {
+        List<Recipes> recipeList = new List<Recipes>();
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -21,11 +23,9 @@ namespace RecipeChooser
 
             Button mainButton = FindViewById<Button>(Resource.Id.mainBtn);
             
-            fillRecipeList();
-            //TextView reciepeTextMain = FindViewById<TextView>(Resource.Id.textViewMain);
-
             mainButton.Click += delegate
             {
+                fillRecipeList();
                 setNewLayout();               
             };
 
@@ -34,9 +34,36 @@ namespace RecipeChooser
         private void setNewLayout()
         {
             SetContentView(Resource.Layout.randomizedRecipe);
+                   
+            TextView recipeTitleName = FindViewById<TextView>(Resource.Id.recipeTitle);
+            ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
 
-            List<Recipes> recipeList = new List<Recipes>();
+            Random random = new Random();
+            int randomNumber = random.Next(0, 20);
+         
+            string imageName = recipeList[randomNumber].imagePath;
+            int resourceId = (int)typeof(Resource.Drawable).GetField(imageName).GetValue(null);
 
+            recipeTitleName.Text = recipeList[randomNumber].Name;
+            imageDialog.SetImageResource(resourceId);
+
+            Button newRecipeButton = FindViewById<Button>(Resource.Id.newRecipeBtn);
+            newRecipeButton.Click += delegate
+            { setNewLayout(); };
+
+            Button goToRecipeButton = FindViewById<Button>(Resource.Id.goToRecipeBtn);
+            string recipeUrl = recipeList[randomNumber].webLink;
+            goToRecipeButton.Click += delegate
+            {
+                var uri = Android.Net.Uri.Parse(recipeUrl);
+                var intent = new Intent(Intent.ActionView, uri);
+                StartActivity(intent);
+            };
+
+        }
+
+        private void fillRecipeList()
+        {
             recipeList.Add(new Recipes { Name = "Lasagne", imagePath = "Lasagne", webLink = "https://www.koket.se/vad-blir-det-for-mat/per-morberg/lasagne-bolognese--per-morbergs-recept/" });
             recipeList.Add(new Recipes { Name = "Köttbullar och potatismos", imagePath = "Meatballs", webLink = "https://www.koket.se/stefanos-kottbullar-med-potatismos" });
             recipeList.Add(new Recipes { Name = "Pizza", imagePath = "pizza", webLink = "https://www.koket.se/niclas_wahlgren/varmratter/mjol/akta_hemlagad_pizza/" });
@@ -60,79 +87,8 @@ namespace RecipeChooser
             recipeList.Add(new Recipes { Name = "Wookade nudlar med grönsaker", imagePath = "Wookadenudlar", webLink = "https://www.koket.se/koket/pelle-johansson/wokade-nudlar-med-gronsaker/" });
             recipeList.Add(new Recipes { Name = "Gulaschsoppa", imagePath = "Gulaschsoppa", webLink = "https://www.koket.se/gulaschsoppa-pa-notfars" });
             recipeList.Add(new Recipes { Name = "Potatisgratäng", imagePath = "Potatisgratang", webLink = "https://www.koket.se/kramig-potatisgratang" });
-            TextView recipeTitleName = FindViewById<TextView>(Resource.Id.recipeTitle);
-
-            ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
-
-            Random random = new Random();
-            int randomNumber = random.Next(0, 19);
-
-            recipeTitleName.Text = recipeList[randomNumber].Name;
-
-            string imageName = recipeList[randomNumber].imagePath;
-            if (imageName == "Lasagne")
-            { imageDialog.SetImageResource(Resource.Drawable.Lasagne); }
-            else if (imageName == "Meatballs")
-            { imageDialog.SetImageResource(Resource.Drawable.Meatballs); }
-            else if (imageName == "pizza")
-            { imageDialog.SetImageResource(Resource.Drawable.pizza); }
-            else if (imageName == "Chili_con_carne")
-            { imageDialog.SetImageResource(Resource.Drawable.Chili_con_carne); }
-            else if (imageName == "spaghettibolognese")
-            { imageDialog.SetImageResource(Resource.Drawable.spaghettibolognese); }
-
-            else if (imageName == "Carbonara")
-            { imageDialog.SetImageResource(Resource.Drawable.Carbonara); }           
-            else if (imageName == "Pannkaka")
-            { imageDialog.SetImageResource(Resource.Drawable.Pannkaka); }
-            else if (imageName == "Biffstroganoff")
-            { imageDialog.SetImageResource(Resource.Drawable.Biffstroganoff); }
-            else if (imageName == "Kycklingkebab")
-            { imageDialog.SetImageResource(Resource.Drawable.Kycklingkebab); }
-            else if (imageName == "Varrullar")
-            { imageDialog.SetImageResource(Resource.Drawable.Varrullar); }
-
-            else if (imageName == "Kaldolmar")
-            { imageDialog.SetImageResource(Resource.Drawable.Kaldolmar); }
-            else if (imageName == "Falafel")
-            { imageDialog.SetImageResource(Resource.Drawable.Falafel); }
-            else if (imageName == "Fishandchips")
-            { imageDialog.SetImageResource(Resource.Drawable.Fishandchips); }
-            else if (imageName == "Pastaalfredo")
-            { imageDialog.SetImageResource(Resource.Drawable.Pastaalfredo); }
-            else if (imageName == "Pyttipanna")
-            { imageDialog.SetImageResource(Resource.Drawable.Pyttipanna); }
-
-            else if (imageName == "Kottbullarpotatis")
-            { imageDialog.SetImageResource(Resource.Drawable.Kottbullarpotatis); }
-            else if (imageName == "Hamburgare")
-            { imageDialog.SetImageResource(Resource.Drawable.Hamburgare); }
-            else if (imageName == "Wookadenudlar")
-            { imageDialog.SetImageResource(Resource.Drawable.Wookadenudlar); }
-            else if (imageName == "Gulaschsoppa")
-            { imageDialog.SetImageResource(Resource.Drawable.Gulaschsoppa); }
-             else if (imageName == "Potatisgratang")
-            { imageDialog.SetImageResource(Resource.Drawable.Potatisgratang); }
-
-            Button newRecipeButton = FindViewById<Button>(Resource.Id.newRecipeBtn);
-            newRecipeButton.Click += delegate
-            { setNewLayout(); };
-
-            Button goToRecipeButton = FindViewById<Button>(Resource.Id.goToRecipeBtn);
-            string recipeUrl = recipeList[randomNumber].webLink;
-            goToRecipeButton.Click += delegate
-            {
-                var uri = Android.Net.Uri.Parse(recipeUrl);
-                var intent = new Intent(Intent.ActionView, uri);
-                StartActivity(intent);
-            };
-
         }
 
-        private void fillRecipeList()
-        {
-            
-        }
     }
     }
 
