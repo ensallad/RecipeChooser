@@ -21,14 +21,14 @@ namespace RecipeChooser
 
             Button mainButton = FindViewById<Button>(Resource.Id.mainBtn);
             
+            fillRecipeList();
             //TextView reciepeTextMain = FindViewById<TextView>(Resource.Id.textViewMain);
-           
+
             mainButton.Click += delegate
             {
                 setNewLayout();               
             };
 
-           
 
         }
         private void setNewLayout()
@@ -36,6 +36,7 @@ namespace RecipeChooser
             SetContentView(Resource.Layout.randomizedRecipe);
 
             List<Recipes> recipeList = new List<Recipes>();
+
             recipeList.Add(new Recipes { Name = "Lasagne", imagePath = "Lasagne", webLink = "https://www.koket.se/vad-blir-det-for-mat/per-morberg/lasagne-bolognese--per-morbergs-recept/" });
             recipeList.Add(new Recipes { Name = "Köttbullar och potatismos", imagePath = "Meatballs", webLink = "https://www.koket.se/stefanos-kottbullar-med-potatismos" });
             recipeList.Add(new Recipes { Name = "Pizza", imagePath = "pizza", webLink = "https://www.koket.se/niclas_wahlgren/varmratter/mjol/akta_hemlagad_pizza/" });
@@ -54,12 +55,11 @@ namespace RecipeChooser
             recipeList.Add(new Recipes { Name = "Pasta kyckling Alfredo", imagePath = "Pastaalfredo", webLink = "https://www.koket.se/one-pot-kyckling-alfredo" });
             recipeList.Add(new Recipes { Name = "Pyttipanna", imagePath = "Pyttipanna", webLink = "https://www.koket.se/per_morberg/varmratter/kott/per_morbergs_pyttipanna/" });
 
-            recipeList.Add(new Recipes { Name = "Köttbullar med potatis och gräddsås", imagePath = "Kottbullarpotatis", webLink = "https://www.koket.se/hemlagade-kottbullar-med-graddsas" });
+            recipeList.Add(new Recipes { Name = "Köttbullar med gräddsås", imagePath = "Kottbullarpotatis", webLink = "https://www.koket.se/hemlagade-kottbullar-med-graddsas" });
             recipeList.Add(new Recipes { Name = "Hamburgare", imagePath = "Hamburgare", webLink = "https://www.koket.se/mitt-kok/tommy-myllymaki/tommy-myllymakis-saftiga-cheeseburgare/" });
             recipeList.Add(new Recipes { Name = "Wookade nudlar med grönsaker", imagePath = "Wookadenudlar", webLink = "https://www.koket.se/koket/pelle-johansson/wokade-nudlar-med-gronsaker/" });
             recipeList.Add(new Recipes { Name = "Gulaschsoppa", imagePath = "Gulaschsoppa", webLink = "https://www.koket.se/gulaschsoppa-pa-notfars" });
             recipeList.Add(new Recipes { Name = "Potatisgratäng", imagePath = "Potatisgratang", webLink = "https://www.koket.se/kramig-potatisgratang" });
-
             TextView recipeTitleName = FindViewById<TextView>(Resource.Id.recipeTitle);
 
             ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
@@ -127,6 +127,11 @@ namespace RecipeChooser
                 StartActivity(intent);
             };
 
+        }
+
+        private void fillRecipeList()
+        {
+            
         }
     }
     }

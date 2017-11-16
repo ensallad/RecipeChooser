@@ -41,6 +41,31 @@ namespace RecipeChooser
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f040001
+			public const int my_green = 2130968577;
+			
+			// aapt resource value: 0x7f040000
+			public const int my_lightBlue = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int my_skyBlue = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int my_whiteBlue = 2130968579;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -123,23 +148,23 @@ namespace RecipeChooser
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int goToRecipeBtn = 2131034117;
+			// aapt resource value: 0x7f070005
+			public const int goToRecipeBtn = 2131165189;
 			
-			// aapt resource value: 0x7f050001
-			public const int imageDisplay = 2131034113;
+			// aapt resource value: 0x7f070001
+			public const int imageDisplay = 2131165185;
 			
-			// aapt resource value: 0x7f050002
-			public const int mainBtn = 2131034114;
+			// aapt resource value: 0x7f070002
+			public const int mainBtn = 2131165186;
 			
-			// aapt resource value: 0x7f050004
-			public const int newRecipeBtn = 2131034116;
+			// aapt resource value: 0x7f070004
+			public const int newRecipeBtn = 2131165188;
 			
-			// aapt resource value: 0x7f050003
-			public const int recipeTitle = 2131034115;
+			// aapt resource value: 0x7f070003
+			public const int recipeTitle = 2131165187;
 			
-			// aapt resource value: 0x7f050000
-			public const int textViewMain = 2131034112;
+			// aapt resource value: 0x7f070000
+			public const int textViewMain = 2131165184;
 			
 			static Id()
 			{
@@ -173,11 +198,11 @@ namespace RecipeChooser
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
 			
 			static String()
 			{
@@ -185,6 +210,22 @@ namespace RecipeChooser
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int backgroundTheme = 2131099648;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
