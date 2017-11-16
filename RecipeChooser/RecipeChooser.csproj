@@ -98,9 +98,6 @@
     <AndroidResource Include="Resources\drawable\Chili_con_carne.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\spaghettibolognese.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\Carbonara.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -128,9 +125,6 @@
     <AndroidResource Include="Resources\drawable\Pastaalfredo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Pyttipanna.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\Kottbullarpotatis.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\startbild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Pyttipanna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spaghettibolognese.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
