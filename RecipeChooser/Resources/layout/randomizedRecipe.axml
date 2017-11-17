@@ -52,5 +52,5 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:id="@+id/goToRecipeBtn"
-        android:backgroundTint="#68a5d1" />
+        android:backgroundTint="#f2fcfb" />
 </LinearLayout>

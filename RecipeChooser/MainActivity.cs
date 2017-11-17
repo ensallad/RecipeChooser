@@ -39,8 +39,11 @@ namespace RecipeChooser
             ImageView imageDialog = FindViewById<ImageView>(Resource.Id.imageDisplay);
 
             Random random = new Random();
-            int randomNumber = random.Next(0, 20);
-         
+            int listSize = 0;
+            for (int x = 0; x < recipeList.Count; x++)
+            { listSize = x + 1; };
+            int randomNumber = random.Next(0, listSize);
+            
             string imageName = recipeList[randomNumber].imagePath;
             int resourceId = (int)typeof(Resource.Drawable).GetField(imageName).GetValue(null);
 
@@ -87,6 +90,18 @@ namespace RecipeChooser
             recipeList.Add(new Recipes { Name = "Wookade nudlar med grönsaker", imagePath = "Wookadenudlar", webLink = "https://www.koket.se/koket/pelle-johansson/wokade-nudlar-med-gronsaker/" });
             recipeList.Add(new Recipes { Name = "Gulaschsoppa", imagePath = "Gulaschsoppa", webLink = "https://www.koket.se/gulaschsoppa-pa-notfars" });
             recipeList.Add(new Recipes { Name = "Potatisgratäng", imagePath = "Potatisgratang", webLink = "https://www.koket.se/kramig-potatisgratang" });
+
+            recipeList.Add(new Recipes { Name = "Köttfärspaj", imagePath = "Kottfarspaj", webLink = "https://www.koket.se/lisa-lemkes-basta-kottfarspaj" });
+            recipeList.Add(new Recipes { Name = "Morotssoppa", imagePath = "Morotssoppa", webLink = "https://www.koket.se/morotssoppa-med-ingefara-och-chili" });
+            recipeList.Add(new Recipes { Name = "Kycklinggryta med curry", imagePath = "Kycklinggryta", webLink = "https://www.koket.se/anna-hallen/soppor-och-grytor/kyckling-och-fagel/kycklinggryta-med-curry/" });
+            recipeList.Add(new Recipes { Name = "Makaronipudding", imagePath = "Makaronipudding", webLink = "https://www.koket.se/morberg-lagar-husmanskost/per-morberg/per-morbergs-makaronipudding/" });
+            recipeList.Add(new Recipes { Name = "Ugnsbakad kyckling", imagePath = "Ugnsbakadkyckling", webLink = "https://www.koket.se/camilla_thulin_och_uluc_telmen/varmratter/kyckling_och_fagel/ugnsbakad_kyckling_med_klyftpotatis/" });
+
+            recipeList.Add(new Recipes { Name = "Sushi", imagePath = "Sushi", webLink = "https://www.koket.se/sa-gor-du-egen-sushi" });
+            recipeList.Add(new Recipes { Name = "Lax", imagePath = "Salmon", webLink = "https://www.koket.se/mitt-kok/tommy-myllymaki/sojamarinerad-lax-med-sesambroccoli/" });
+            recipeList.Add(new Recipes { Name = "Wienerschnitzel", imagePath = "Wienerschnitzel", webLink = "https://www.koket.se/per-morbergs-wienerschnitzel" });
+            recipeList.Add(new Recipes { Name = "Asiatisk kycklingsoppa", imagePath = "Kycklingsoppa", webLink = "https://www.koket.se/annika_wesslen/varmratter/kyckling_och_fagel/asiatisk_kycklingsoppa/" });
+            recipeList.Add(new Recipes { Name = "Caesarsallad", imagePath = "Caesarsallad", webLink = "https://www.koket.se/svarslagen-caesarsallad" });
         }
 
     }
